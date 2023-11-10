@@ -1,0 +1,46 @@
+
+label {
+    font-size:15px;
+    color:var(--dark-color);
+    margin:20px 0 10px;
+}
+label span {
+    color:var(--main-color);
+    font-size:14px;
+}
+
+.form-input{
+    width:100% !important;
+    height: 55px !important;
+    line-height: 55px;
+    padding: 0 15px;
+    background-color: unset;
+    outline: none;
+    color: var(--light-color);
+    border-radius: 5px;
+    border: 1px solid rgba(221,221,221,.4) !important;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-box-shadow: 0 0 10px transparent;
+    box-shadow: 0 0 10px transparent;
+    margin-bottom:5px !important;
+}
+.react-tel-input {
+    margin-bottom:5px !important
+}
+.form-input:focus {
+   box-shadow: none !important;
+   border-color:rgba(171, 171, 171, 0.816) !important
+}
+p a {
+    color:var(--dark-color) !important
+}
+p a:hover {
+    color:var(--main-color) !important
+}
+.eye {
+    position: absolute;
+    right:25px;
+    top:65px;
+    cursor: pointer;
+}

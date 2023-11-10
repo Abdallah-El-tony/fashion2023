@@ -1,0 +1,391 @@
+/*  ======================================
+    ===== start Home carousel style======= 
+    ====================================== */
+
+.carousel-images img:first-child {
+    position: relative;
+    z-index: 2;
+}
+.carousel {
+    background-color:var(--main-bg-color);
+}
+.carousel-text {
+    position: relative;
+    z-index:4;
+}
+.carousel-text h1 {
+    text-transform: uppercase;
+}
+.carousel-text p {
+    font-size:18px;
+    margin-top:16px;
+}
+.carousel-text h1 span{
+    color:var(--main-color)
+}
+.carousel-images {
+    position:relative;
+}
+.carousel-images .mask {
+   background-color:#ffdcd2;
+   position:absolute;
+   left:0;
+   top:50%;
+   transform:translateY(-50%);
+   border-radius:50%;
+   z-index:0
+}
+.text-img {
+    position: absolute;
+    width: 284px;
+    top: 35%;
+    z-index: 3;
+    right: 0;
+}
+.carousel .carousel-indicators  {
+    z-index: 5;
+    width:fit-content;
+    margin-right: 2% !important;
+    margin-left:auto !important;
+
+}
+.carousel-indicators [data-bs-target] {
+    background-color:#ddd !important;
+    height:4px !important;
+    width:20px !important;
+    transition:0.8s;
+}
+.carousel-indicators .active {
+    background-color:var(--main-color) !important;
+    width:40px !important;
+    transition:0.3s;
+}
+
+
+/*  =================================
+    ==== start Featured Product =====
+    ================================== */
+
+.product__container {
+    cursor:pointer;
+    position:relative;
+}
+.product__container-img {
+    position:relative !important;
+    /* background-color:#eff0ff !important; */
+    overflow: hidden;
+}
+.product__img {
+    transition:0.5s;
+    overflow:hidden;
+}
+.product__img img{
+    transition:0.5s;
+}
+.product__container:hover .product__buttons {
+    opacity:1;
+    bottom:25%;
+}
+.product__container:hover .product__img {
+    transform:rotate(5deg);
+}
+.product__container:hover .product__img img{
+    transform:scale(1.2);
+}
+.product__buttons {
+    left:50%;
+    bottom:15%;
+    transform:translateX(-50%);
+    position:absolute;
+    transition:0.3s;
+    opacity:0;
+}
+.product__buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:0.3s;
+    width:48px;
+    border-radius:5px;
+    border:none;
+    height:48px;
+    color:var(--light-color);
+    background-color:#fff;
+    box-shadow: 0 0 5px rgba(172, 172, 172, 0.2);
+}
+.product__buttons button:hover {
+    background-color:var(--main-color);
+    color:#fff;
+}
+.product__flags {
+    position:absolute;
+    top:0;
+    right:2px;
+}
+span.descount , span.arrival {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 3px 12px;
+  color: #fff;
+  background-color: var(--main-color);
+  width: fit-content;
+  margin-bottom:10px;
+}
+span.arrival {
+    background-color: #5AB27E;
+}
+.product__description h4 , 
+.product__description span {
+    font-size:20px;
+    font-weight:500;
+    color:var(--dark-color)
+}
+.product__description span {
+    color:var(--main-color);
+}
+.product__description del {
+    color:var(--light-extra);
+    font-weight:400;
+}
+.alice-carousel__prev-btn-wrapper p , .alice-carousel__next-btn-wrapper p {
+    width:fit-content;
+    position:absolute;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    top:-90px;
+    right:0;
+    width:50px;
+    height:50px;
+    border:1px solid #ddd;
+    transition:0
+
+}
+.testimonials .alice-carousel__prev-btn-wrapper p , .testimonials .alice-carousel__next-btn-wrapper p {
+    top:100%;
+    left:0 !important;
+
+}
+.testimonials .alice-carousel {
+    position:unset;
+}
+.alice-carousel__prev-btn-wrapper p:hover ,
+.alice-carousel__next-btn-wrapper p:hover ,
+.alice-carousel__prev-btn-wrapper p:hover *,
+.alice-carousel__next-btn-wrapper p :hover *
+ {
+    color:var(--main-color);
+    border-color:var(--main-color)
+ }
+.alice-carousel__prev-btn-wrapper p {
+    right:70px;
+}
+.testimonials .alice-carousel__next-btn-wrapper p {
+    left:70px  !important;
+}
+
+ 
+/*  =================================
+    ==== start Collection section ===
+    ================================== */
+
+.collection__card {
+    background-color:var(--main-bg-color);
+}
+.cart__description span {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+
+}
+.cart__description {
+    padding:40px;
+    margin:auto;
+    box-shadow: 0 0 10px rgba(221, 221, 221, 0.2);
+}
+.cart__description h2 {
+    font-weight:600;
+}
+
+/*  =================================
+    == Deel with week Store section =
+    ================================= */
+
+    .deal__img {
+        position:absolute;
+        bottom:0;
+    }
+
+/*  =================================
+    ==== start Gallery section ===
+    ================================== */
+
+ul.categories {
+    display: block;
+    background-color: #fff;
+    border: 1px solid rgba(221, 221, 221, 0.3)
+}
+ul.categories li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 25px;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--light-color);
+    border-right: 5px solid #fff;
+    -webkit-transition: 200ms;
+    cursor:pointer;
+    transition: 200ms;
+}
+.active-tap {
+    background-color: var(--secondary-bg-color) !important;
+    border-right: 5px solid var(--main-color) !important;
+    color: var(--dark-color) !important;
+} 
+
+
+/*  =================================
+    ==== start Blogs section ========
+    ================================== */
+
+.blog__flag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 9;
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 5px 15px;
+  text-align:center;
+}
+.blog__flag span{
+    display:block;
+}
+.blog__flag span:nth-child(2) {
+    border:1px solid #fff;
+    margin:3px 0;
+}
+
+/*  =================================
+    ==== start Partiner section =====
+    ================================== */
+
+.partiners ul li {
+    text-align:center !important;
+}
+
+/*  =================================
+    ==== start Brands section =======
+    ================================== */
+
+.brand__img {
+    width:200px;
+    margin:auto !important;
+}
+
+
+@media (min-width:557px) {
+    
+}    
+@media (min-width:768px) {
+    .carousel-images {
+        width:380px;
+    }
+    .carousel-images .mask {
+        width:380px;
+        height:380px;
+    }
+    .client__title {
+        max-width:500px;
+    }
+    .deal__content {
+        max-width:600px;
+        padding: 50px 0 50px 20px;
+    }
+}    
+@media (min-width:992px) {
+    .carousel-images {
+        width:400px;
+    }
+    .carousel-images .mask {
+        width:400px;
+        height:400px;
+    }
+    .cart__description {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background-color:#fff;
+        padding:30px;
+        max-width:380px;
+    }
+    .deal__content {
+        max-width:600px;
+        padding: 100px 0 100px 70px;
+    }
+    .deal__img {
+        max-width:400px;
+    }
+    .client__title {
+        max-width:100%;
+    }
+    .testimonials .alice-carousel__prev-btn-wrapper p , .testimonials .alice-carousel__next-btn-wrapper p {
+        top:80%;
+    }
+
+}    
+@media (min-width:1200px) {
+    .carousel-images {
+        width:550px;
+    }
+    .carousel-images .mask {
+        width:480px;
+        height:480px;
+    }
+    .cart__description {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        background-color:#fff;
+        padding:30px;
+        max-width:450px;
+    }
+    .deal__content {
+        max-width:450px;
+        padding: 150px 0 150px 70px;
+    }
+
+    .deal__content p     {
+        font-size:18px;
+    }
+    .deal__img {
+        max-width:500px;
+    }
+    
+}    
+
+@media (max-width:768px) {
+    .carousel-inner {
+        height: 417px;
+        display: flex;
+        align-items: center;
+    }
+    .text-img {
+        right:0;
+        top:25%;
+        left:0;
+        margin:auto;
+    }
+    .deal__content {
+        padding: 50px 0 50px 20px; ;
+    }
+}
