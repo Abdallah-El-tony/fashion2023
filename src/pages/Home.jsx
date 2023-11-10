@@ -1,7 +1,7 @@
 // ** components
 import { BlogsSection, CollectionArea, FeaturedProduct, FlashProduct, Partiners, StoreSection, Testimonials } from "../components"
 import DealWrapperSection from "../components/apps/DealWrapperSection"
-// import HomeCarousel from "../components/apps/HomeCarousel"
+import HomeCarousel from "../components/apps/HomeCarousel"
 
 // ** hooks
 
@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* <HomeCarousel/> */}
+      <HomeCarousel/>
       <FeaturedProduct/>
       <CollectionArea/>
       <StoreSection/>
