@@ -19,6 +19,7 @@ import brand5 from "../../assets/brand-5.png";
 
 // ** helpers
 import {responsive1 , responsive2 , responsive3 , responsive4} from '../../constants'
+import TeamCard from "./TeamCard";
 
 const CustomSlider = ({ type }) => {
   // ** vars
@@ -48,19 +49,27 @@ const CustomSlider = ({ type }) => {
     <div className="brand__img" key={5}><img src={brand5} alt="" /></div>,
 
   ];
+  const team = [
+    <TeamCard key={1}/>,
+    <TeamCard key={2}/>,
+    <TeamCard key={3}/>,
+    <TeamCard key={4}/>
+  ]
   return (
     <>
       <AliceCarousel
         items={
-          type === "feedbacks"
+          type === "feedbacks" || type ==='testimonials'
             ? clients
             : type === "blogs" ? blogs
             : type === "partiners" ? partiners
+            : type ==='team' ? team
             :products
         }
         responsive={
           type === "feedbacks"
             ? responsive2
+            : type ==='testimonias'? responsive1
             : type === "flash" || type === "blogs"
             ? responsive3
             : type=== 'partiners' ? responsive4

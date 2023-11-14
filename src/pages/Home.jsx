@@ -10,18 +10,18 @@ const Home = () => {
   // ** Hooks
 
   return (
-    <div>
+    <>
       <HomeCarousel/>
       <FeaturedProduct/>
       <CollectionArea/>
       <StoreSection/>
       <DealWrapperSection/>
       <FlashProduct/>
-      <Testimonials/>
+      <Testimonials type='home'/>
       <BlogsSection/>
       <Partiners/>
 
-    </div>
+    </>
   )
 }
 

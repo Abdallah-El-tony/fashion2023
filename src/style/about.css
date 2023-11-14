@@ -1,0 +1,47 @@
+.about__img {
+max-width:620px;
+}
+.about__text p {
+font-size:18px;
+}
+.about__text h2 {
+    font-size:46px !important;
+}
+
+
+.counters {
+    border:2px dashed var(--main-color);
+    padding:55px 0 80px;
+}
+.counter {
+    text-align:center;
+}
+.counter__progress {
+    font-size:32px;
+    font-weight:500;
+    color:var(--dark-color);
+    padding-bottom:20px;
+    position:relative;
+}
+.counter__progress::after {
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    width:50px;
+    margin:auto;
+    height:3px;
+    background-color:var(--main-color)
+}
+
+
+@media (max-width:768px) {
+    .about__text h2 {
+        font-size:36px !important;
+    }
+    .about__text p {
+        font-size:16px;
+
+        }    
+}

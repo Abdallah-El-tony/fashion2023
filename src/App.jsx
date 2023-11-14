@@ -2,7 +2,7 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // ** pages imports
-import { Home, Login, SignUp } from "./pages";
+import { About, Home, Login, SignUp } from "./pages";
 
 // ** components import
 import { Footer, Navbar, ScrollBtn, Services } from "./components";
@@ -31,6 +31,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/about",
+          element: <About />,
         },
         {
           path: "/signup",
