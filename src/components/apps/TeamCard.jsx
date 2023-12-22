@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 
-const TeamCard = () => {
+const TeamCard = ({person,name,job}) => {
   return (
     <div>
         <div className="member p-3 border">
             <div>
-                <img src="https://hexfashion.xyz/assets/tenant/uploads/media-uploader/hexfashion/team11668539086.jpg" alt="" />
+                <img src={person} alt="" />
             </div>
             <div className="mt-2">
-                <h4 className="mb-1">John Cena</h4>
-                <p>Sales Manager</p>
+                <h4 className="mb-1">{name}</h4>
+                <p>{job}</p>
             </div>
         </div>
     </div>

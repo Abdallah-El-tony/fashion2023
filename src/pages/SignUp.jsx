@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react-hooks/exhaustive-deps */
 
 // ** Components
@@ -17,6 +18,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "../data/schema";
 import SelectBox from "../components/apps/CustomSelect";
+import { useBackToTop } from "../hooks/useBackToTop";
+
+// ** redux
+import { useDispatch } from "react-redux";
+import { AuthActions } from "../store/slices/authSlice";
+import useFetch from "../hooks/useFetch";
 
 const initialData = {
   name: "",
@@ -30,8 +37,15 @@ const initialData = {
 };
 
 const SignUp = () => {
+  // ** vars
+  const { signUp } = AuthActions;
+  const { fetchData  , error} = useFetch();
+
   // Hooks
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useBackToTop();
 
   // states
   const [viewPs, setViewPs] = useState(false);
@@ -39,7 +53,7 @@ const SignUp = () => {
   const [formData, setFormData] = useState(initialData);
   const [phoneNumber, SetPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
-  const [isSubmitted,setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,17 +72,18 @@ const SignUp = () => {
     setFormData({ ...formData, phone: phoneNumber, country });
   }, [country, phoneNumber]);
 
-  const submitHandler = () => {
-    console.log(formData)
+  const submitHandler = async () => {
     delete formData.confirmpassword;
-    navigate("/");
+    await fetchData('http://localhost:5000/api/users', 'POST', {}, formData)
+    if(!error) {
+        dispatch(signUp());
+       navigate("/");
+     }
+  };
+  const clickHandler = () => {
+    setIsSubmitted(true);
   };
 
-  const clickHandler = ()=>{
-    setIsSubmitted(true)
-  }
-
-  
   const {
     register,
     handleSubmit,
@@ -158,7 +173,7 @@ const SignUp = () => {
                 <label htmlFor="country">
                   Country <span>*</span>
                 </label>
-                <SelectBox setCountry={setCountry} isSubmitted={isSubmitted}/>
+                <SelectBox setCountry={setCountry} isSubmitted={isSubmitted} />
 
                 <label htmlFor="city">
                   City <span>*</span>
@@ -239,7 +254,11 @@ const SignUp = () => {
                   </div>
                 </div>
 
-                <button className="filledBtn mt-3" type="submit" onClick={clickHandler}>
+                <button
+                  className="filledBtn mt-3"
+                  type="submit"
+                  onClick={clickHandler}
+                >
                   Sign Up
                 </button>
               </form>

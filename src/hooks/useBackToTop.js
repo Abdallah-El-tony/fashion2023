@@ -1,7 +1,10 @@
+import { useEffect } from "react"
 
-export const useBackToTop = ()=>{
-    window.scrollTo({
-        top: 0,
+export const useBackToTop = (value)=>{
+    useEffect(()=>{
+      window.scrollTo({
+        top: value ? 332 : 0,
         behavior: 'smooth',
       });
+    },[value])
 }

@@ -1,27 +1,28 @@
+/* eslint-disable react/prop-types */
 // ** icons
 import { Tag } from "react-bootstrap-icons";
 
 // ** style import 
 import '../../style/home.css'
-const BlogItem = () => {
+const BlogItem = ({img,name,category,date,comments}) => {
   return (
-    <div className="">
+    <div className="position-relative">
       <div className="blog__img">
         <img
-          src="https://hexfashion.xyz/assets/tenant/uploads/media-uploader/hexfashion/blog11665986714.jpg"
+          src={img}
           alt=""
         />
       </div>
       <div className="blog__flag">
-        <span>16</span>
+        <span>{date}</span>
         <span></span>
         <span>Nov</span>
       </div>
       <div className="blog__descreption mt-3">
-        <h5>Do enjoyment defective objection or we if favourite</h5>
+        <h5>{name}</h5>
         <div className="blog__info d-flex gap-3 align-items-center mt-3">
           <span>
-            <Tag color="#ff805d" /> Online Course
+            <Tag color="#ff805d" /> {category}
           </span>
           <span
             style={{
@@ -33,7 +34,7 @@ const BlogItem = () => {
             }}
           ></span>
           <div className="comments">
-            <span className="me-2">0</span>
+            <span className="me-2">{comments}</span>
             Comments
           </div>
         </div>

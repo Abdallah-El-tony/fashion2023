@@ -1,10 +1,16 @@
 // ** img import
+import { useNavigate } from "react-router-dom";
 import person1 from "../assets/collection-person1.png";
 import person2 from "../assets/collection-person2.png";
 
 // ** styles
 import "../style/home.css";
 const CollectionArea = () => {
+
+  const navigate = useNavigate()
+  const handleClick = ()=>{
+    navigate('/shop')
+  }
   return (
     <div className="section position-relative">
       <div className="container">
@@ -23,7 +29,7 @@ const CollectionArea = () => {
         <div className="cart__description text-center mx-auto">
             <span className="primary-text-color">Summer Sale</span>
             <h2 className="h2 mt-1">Exclusive Dress Collection</h2>
-            <button className="filledBtn mt-3">Shop Now</button>
+            <button className="filledBtn mt-3" onClick={handleClick}>Shop Now</button>
         </div>
       </div>
     </div>

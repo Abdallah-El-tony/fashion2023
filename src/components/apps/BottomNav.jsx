@@ -12,7 +12,7 @@ const BottomNav = () => {
         <div className="buttom-nav d-block d-lg-none position-relative">
       <ul>
         <li>
-          <Link to="/cart">
+          <Link to="/cartpage">
             <span>
               <Cart size={20}/>
             </span>
@@ -20,7 +20,7 @@ const BottomNav = () => {
           </Link>
         </li>
         <li>
-          <Link to="compare">
+          <Link to="compareproducts">
             <span>
               <ArrowRepeat size={20}/>
             </span>
@@ -28,7 +28,7 @@ const BottomNav = () => {
           </Link>
         </li>
         <li>
-          <Link to="/wishlist">
+          <Link to="/wishlistproducts">
             <span>
               <SuitHeart size={20}/>
             </span>

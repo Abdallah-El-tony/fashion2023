@@ -1,9 +1,15 @@
 // ** img imports
+import { useNavigate } from "react-router-dom";
 import Person from "../../assets/deal-person.png";
 
 // styles imports 
 import '../../style/home.css'
 const DealWrapperSection = () => {
+
+  const navigate = useNavigate()
+  const handleClick = ()=>{
+    navigate('/shop')
+  }
   return (
     <div className="position-relative mt-5">
       <div className="container primary-bg-color">
@@ -15,7 +21,7 @@ const DealWrapperSection = () => {
                 Why does this particular feature stand out to you right now? The
                 countdown is finished!
               </p>
-              <button className="filledBtn mt-4">Shop Now</button>
+              <button className="filledBtn mt-4" onClick={handleClick}>Shop Now</button>
             </div>
           </div>
           <div className="col d-none d-lg-block">

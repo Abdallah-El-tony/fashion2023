@@ -6,9 +6,16 @@ import 'animate.css';
 
 // ** styls
 import '../../style/home.css'
+import { useNavigate } from 'react-router-dom';
 
 
 const HomeCarousel = () => {
+
+  const navigate = useNavigate()
+  const handleClick = ()=>{
+    navigate('/shop')
+  }
+
   return (
     <div>
       <div className="container">
@@ -28,7 +35,7 @@ const HomeCarousel = () => {
                   <div className="carousel-text ps-3 ps-md-5">
                     <h1 className='h1 animate__animated animate__flipInX animate__slow'>Winter <span>Dress</span> Collection</h1>
                     <p className='animate__animated animate__fadeInUpBig animate__slow'>Here’s a voice that keeps on calling me. Down the road, that’s where I’ll always be.</p>
-                    <button className='filledBtn  mt-5 py-3 animate__animated animate__slow animate__zoomIn'>Shop Now</button>
+                    <button className='filledBtn  mt-5 py-3 animate__animated animate__slow animate__zoomIn' onClick={handleClick}>Shop Now</button>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -45,7 +52,7 @@ const HomeCarousel = () => {
                   <div className="carousel-text ps-3 ps-md-5">
                     <h1 className='h1 animate__animated animate__flipInX animate__slow'>Winter <span>Dress</span> Collection</h1>
                     <p className='animate__animated animate__fadeInUpBig animate__slow'>Here’s a voice that keeps on calling me. Down the road, that’s where I’ll always be.</p>
-                    <button className='filledBtn mt-5 py-3 animate__animated animate__slow animate__zoomIn'>Shop Now</button>
+                    <button className='filledBtn mt-5 py-3 animate__animated animate__slow animate__zoomIn' onClick={handleClick}>Shop Now</button>
                   </div>
                 </div>
                 <div className="col-md-6">

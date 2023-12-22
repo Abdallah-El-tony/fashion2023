@@ -1,0 +1,105 @@
+.horizontal_table thead th:not(thead th:first-child) ,
+.horizontal_table tr td:not(tr td:first-child) {
+    text-align:center !important;
+} 
+.virtical_table tr td {
+    text-align:right;
+    padding-right:15px !important;
+}
+.virtical_table th {
+    padding-left:15px !important;
+}
+thead th {
+    padding: 20px 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color:var(--light-color)
+}
+table thead {
+    background: rgba(221, 221, 221, 0.4);
+}
+
+.horizontal_table,
+.virtical_table,
+.cart_total
+{
+    border:1px solid #f2f2f2
+}
+.horizontal_table tr , .virtical_table tbody {
+    border-bottom:1px solid #f2f2f2;
+}
+table .item_img {
+    width:110px;
+}
+td.remove-btn {
+   transition:0.2s;
+   cursor: pointer;
+}
+td.remove-btn:Hover {
+    color:var(--main-color);
+    transform: scale(1.2);
+}
+
+tr td , .virtical_table th {
+    font-size: 18px;
+    color: var(--dark-color);
+    padding: 20px 0;
+    line-height: 22px;
+    font-weight:500;
+}
+.virtical_table tr td {
+    padding:10px 0;
+}
+.table__footer h5 {
+    font-size:18px !important;
+    color:var(--light-color);
+    font-weight:400;
+    transition:0.3s;
+    padding:15px 20px;
+    text-align:center;
+    cursor: pointer;
+}
+.table__footer h5:Hover {
+    color:#fff;
+    background-color: var(--main-color);
+}
+.table__footer h5:first-child{
+    border:1px solid #f3f1f1;
+}
+.quantity-controles * {
+    border:none;
+    width:35px;
+    height:35px;
+    background-color:#f1f1f1;
+    font-size:18px;
+}
+.quantity-controles input {
+    outline:None;
+    width:50px !important;
+    background-color:#e7e6e6;
+}
+.cart_total {
+    padding:40px 30px;
+}
+.cart_total ul li {
+    border-top: 1px solid rgba(221, 221, 221, 0.4);
+    padding:18px 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart_total ul li h6 {
+    font-weight:600 !important;
+}
+.close-btn span {
+    background-color:var(--main-color);
+    transition:0.3s;
+    color:#fff;
+    display:inline-block;
+    cursor: pointer;
+}
+.close-btn span:hover {
+    background-color:transparent;
+    color:#000;
+    transform: scale(1.3);
+}

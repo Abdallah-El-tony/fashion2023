@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 // ** alice slider libiray
 import AliceCarousel from "react-alice-carousel";
@@ -6,9 +7,6 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import '../../style/home.css'
 
-import SingleProduct from "./SingleProduct";
-import TestimonialCard from "./TestimonialCard";
-import BlogItem from "./BlogItem";
 
 // ** images
 import brand1 from "../../assets/brand-1.png";
@@ -19,28 +17,16 @@ import brand5 from "../../assets/brand-5.png";
 
 // ** helpers
 import {responsive1 , responsive2 , responsive3 , responsive4} from '../../constants'
-import TeamCard from "./TeamCard";
+import {useSplitBlogs, useSplitClients, useSplitFeaturedProducts, useSplitFlashProducts, useSplitTeam} from "../../hooks/useSplit";
 
 const CustomSlider = ({ type }) => {
+
   // ** vars
-  const clients = [
-    <TestimonialCard key={1} />,
-    <TestimonialCard key={2} />,
-    <TestimonialCard key={3} />,
-    <TestimonialCard key={4} />,
-  ];
-  const products = [
-    <SingleProduct key={1} flag="slider" index={1}/>,
-    <SingleProduct key={2} flag="slider" index={2}/>,
-    <SingleProduct key={3} flag="slider" index={3}/>,
-    <SingleProduct key={4} flag="slider" index={4}/>,
-  ];
-  const blogs = [
-    <BlogItem key={1} flag="slider" />,
-    <BlogItem key={2} flag="slider" />,
-    <BlogItem key={3} flag="slider" />,
-    <BlogItem key={4} flag="slider" />,
-  ];
+  const blogs = useSplitBlogs()
+  const clients = useSplitClients()
+  const team = useSplitTeam()
+  const flashProducts = useSplitFlashProducts()
+  const featuredProduct = useSplitFeaturedProducts()
   const partiners = [
     <div className="brand__img" key={1}><img src={brand1} alt="" /></div>,
     <div className="brand__img" key={2}><img src={brand2} alt="" /></div>,
@@ -49,12 +35,7 @@ const CustomSlider = ({ type }) => {
     <div className="brand__img" key={5}><img src={brand5} alt="" /></div>,
 
   ];
-  const team = [
-    <TeamCard key={1}/>,
-    <TeamCard key={2}/>,
-    <TeamCard key={3}/>,
-    <TeamCard key={4}/>
-  ]
+  
   return (
     <>
       <AliceCarousel
@@ -64,14 +45,15 @@ const CustomSlider = ({ type }) => {
             : type === "blogs" ? blogs
             : type === "partiners" ? partiners
             : type ==='team' ? team
-            :products
+            : type === "flash"? flashProducts
+            :type === "featured"? featuredProduct
+            :[]
         }
         responsive={
           type === "feedbacks"
             ? responsive2
             : type ==='testimonias'? responsive1
-            : type === "flash" || type === "blogs"
-            ? responsive3
+            : type === "flash" || type === "blogs"? responsive3
             : type=== 'partiners' ? responsive4
             :responsive1
         }
